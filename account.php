@@ -91,7 +91,8 @@ if (!empty($_SESSION['uid'])) {
       <?php if(!empty($uid)){
         $orders = mysqli_query($conn,"select * from orders where uid='$uid'") or die(mysqli_error($conn));
         if(mysqli_num_rows($orders)){
-            while($order = mysqli_fetch_array($orders)){?>
+          var_dump(unserialize(mysqli_fetch_array($orders)['items']));
+            while($order = mysqli_fetch_array($orders)){ ?>
               <div class="col-lg-12">
                 <div class="order-header d-flex" onclick="toggle_visibility('order-detail1');">
                   <h4>
@@ -159,17 +160,17 @@ if (!empty($_SESSION['uid'])) {
                   </div>
                 </div>
               </div>
-            <?php } } } ?>
-      <div class="col-lg-12">
-        <div class="order-header d-flex" onclick="toggle_visibility('order-detail1');">
-          <h4>
+            <?php }}} ?>
+       <!-- <div class="col-lg-12"> -->
+      <!-- <div class="order-header d-flex" onclick="toggle_visibility('order-detail1');"> -->
+          <!-- <h4>
             Order# 12345678
-          </h4>
-          <i class="fa fa-angle-down"></i>
-        </div>
-        <div class="row hiddenDetails" id="order-detail1">
+          </h4> -->
+          <!-- <i class="fa fa-angle-down"></i>
+        </div> -->
+        <!-- <div class="row hiddenDetails" id="order-detail1"> -->
           <!-- single product -->
-          <div class="col-lg-4 col-md-6">
+          <!-- <div class="col-lg-4 col-md-6">
             <div class="ordered-item">
               <span class="d-status"><span class="ti-package"></span>
                 <h4 class="green_status">Succesfully Placed On</h4>
@@ -195,9 +196,9 @@ if (!empty($_SESSION['uid'])) {
                 <a href="#"> &nbsp;Do you agree?</a>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- single product -->
-          <div class="col-lg-4 col-md-6">
+          <!-- <div class="col-lg-4 col-md-6">
             <div class="ordered-item">
               <span class="d-status"><span class="ti-package"></span>
                 <h4 class="green_status">Succesfully Placed On</h4>
@@ -224,213 +225,11 @@ if (!empty($_SESSION['uid'])) {
                 <a href="#"> &nbsp;Do you agree?</a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> -->
+        <!-- </div> -->
+      <!-- </div> --> 
       <!-- End Single Order -->
       <!-- Start Single order -->
-      <div class="col-lg-12">
-        <div class="order-header d-flex" onclick="toggle_visibility('order-detail2');">
-          <h4>
-            Order# 56478942
-          </h4><i class="fa fa-angle-down"></i>
-        </div>
-        <div class="row hiddenDetails" id="order-detail2">
-          <!-- single product -->
-          <div class="col-lg-4 col-md-6">
-            <div class="ordered-item">
-              <span class="d-status"><span class="ti-package"></span>
-                <h4 class="green_status">Succesfully Placed On</h4>
-                <h5><span class="dilivery-date">Tue, 15 Sept</span>
-                </h5>
-              </span>
-              <a href="" class="ordered_product_link">
-                <div class="product-bought">
-                  <img class="o-small-img" src="img/fav.png" alt="" />
-                  <div class="product-details">
-                    <h6>Whey Protein</h6>
-                    <div class="price">
-                      <h6>$150.00</h6>
-                    </div>
-                    <div class="weight">
-                      <h6>2kg</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="product_rate">
-                <h6>Rate Product</h6>
-                <form action="">
-                  <div class="star-rating">
-                    <div id="boughtProductStars" class="rating">
-                      <input id="star5" type="radio" data-index="5" name="star" value="5">
-                      <label for="star5" title="5 out of 5 stars"></label>
-                      <input id="star4" type="radio" data-index="4" name="star" value="4">
-                      <label for="star4" title="4 out of 5 stars"></label>
-                      <input id="star3" type="radio" data-index="3" name="star" value="3">
-                      <label for="star3" title="3 out of 5 stars"></label>
-                      <input id="star2" type="radio" data-index="2" name="star" value="2">
-                      <label for="star2" title="2 out of 5 stars"></label>
-                      <input id="star1" type="radio" data-index="1" name="star" value="1">
-                      <label for="star1" title="1 out of 5 stars"></label>
-                    </div>
-                  </div>
-                  <div class="input_area">
-                    <textarea name="comment" id="boughtProductComment" cols="30" rows="8" placeholder="Add Comment"></textarea>
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <!-- single product -->
-          <div class="col-lg-4 col-md-6">
-            <div class="ordered-item">
-              <span class="d-status"><span class="ti-package"></span>
-                <h4 class="green_status">Succesfully Placed On</h4>
-                <h5>
-                  On&nbsp;<span class="dilivery-date">Tue, 15 Sept</span>
-                </h5>
-              </span>
-              <a href="" class="ordered_product_link">
-                <div class="product-bought">
-                  <img class="o-small-img" src="img/fav.png" alt="" />
-                  <div class="product-details">
-                    <h6>Whey Protein</h6>
-                    <div class="price">
-                      <h6>$150.00</h6>
-                    </div>
-                    <div class="weight">
-                      <h6>2kg</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="product_rate">
-                <h6>Rate Product</h6>
-                <form action="">
-                  <div class="star-rating">
-                    <div id="boughtProductStars" class="rating">
-                      <input id="star5" type="radio" data-index="5" name="star" value="5">
-                      <label for="star5" title="5 out of 5 stars"></label>
-                      <input id="star4" type="radio" data-index="4" name="star" value="4">
-                      <label for="star4" title="4 out of 5 stars"></label>
-                      <input id="star3" type="radio" data-index="3" name="star" value="3">
-                      <label for="star3" title="3 out of 5 stars"></label>
-                      <input id="star2" type="radio" data-index="2" name="star" value="2">
-                      <label for="star2" title="2 out of 5 stars"></label>
-                      <input id="star1" type="radio" data-index="1" name="star" value="1">
-                      <label for="star1" title="1 out of 5 stars"></label>
-                    </div>
-                  </div>
-                  <div class="input_area">
-                    <textarea name="comment" id="boughtProductComment" cols="30" rows="8" placeholder="Add Comment"></textarea>
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <!-- single product -->
-          <div class="col-lg-4 col-md-6">
-            <div class="ordered-item">
-              <span class="d-status"><span class="ti-package"></span>
-                <h4 class="green_status">Succesfully Placed On</h4>
-                <h5>
-                  On&nbsp;<span class="dilivery-date">Tue, 15 Sept</span>
-                </h5>
-              </span>
-              <a href="" class="ordered_product_link">
-                <div class="product-bought">
-                  <img class="o-small-img" src="img/fav.png" alt="" />
-                  <div class="product-details">
-                    <h6>Whey Protein</h6>
-                    <div class="price">
-                      <h6>$150.00</h6>
-                    </div>
-                    <div class="weight">
-                      <h6>2kg</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="product_rate">
-                <h6>Rate Product</h6>
-                <form action="">
-                  <div class="star-rating">
-                    <div id="boughtProductStars" class="rating">
-                      <input id="star5" type="radio" data-index="5" name="star" value="5">
-                      <label for="star5" title="5 out of 5 stars"></label>
-                      <input id="star4" type="radio" data-index="4" name="star" value="4">
-                      <label for="star4" title="4 out of 5 stars"></label>
-                      <input id="star3" type="radio" data-index="3" name="star" value="3">
-                      <label for="star3" title="3 out of 5 stars"></label>
-                      <input id="star2" type="radio" data-index="2" name="star" value="2">
-                      <label for="star2" title="2 out of 5 stars"></label>
-                      <input id="star1" type="radio" data-index="1" name="star" value="1">
-                      <label for="star1" title="1 out of 5 stars"></label>
-                    </div>
-                  </div>
-                  <div class="input_area">
-                    <textarea name="comment" id="boughtProductComment" cols="30" rows="8" placeholder="Add Comment"></textarea>
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <!-- single product -->
-          <div class="col-lg-4 col-md-6">
-            <div class="ordered-item">
-              <span class="d-status"><span class="ti-package"></span>
-                <h4 class="green_status">Succesfully Placed On</h4>
-                <h5>
-                  On&nbsp;<span class="dilivery-date">Tue, 15 Sept</span>
-                </h5>
-              </span>
-              <a href="" class="ordered_product_link">
-                <div class="product-bought">
-                  <img class="o-small-img" src="img/fav.png" alt="" />
-                  <div class="product-details">
-                    <h6>Whey Protein</h6>
-                    <div class="price">
-                      <h6>$150.00</h6>
-                    </div>
-                    <div class="weight">
-                      <h6>2kg</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="product_rate">
-                <h6>Rate Product</h6>
-                <form action="">
-                  <div class="star-rating">
-                    <div id="boughtProductStars" class="rating">
-                      <input id="star5" type="radio" data-index="5" name="star" value="5">
-                      <label for="star5" title="5 out of 5 stars"></label>
-                      <input id="star4" type="radio" data-index="4" name="star" value="4">
-                      <label for="star4" title="4 out of 5 stars"></label>
-                      <input id="star3" type="radio" data-index="3" name="star" value="3">
-                      <label for="star3" title="3 out of 5 stars"></label>
-                      <input id="star2" type="radio" data-index="2" name="star" value="2">
-                      <label for="star2" title="2 out of 5 stars"></label>
-                      <input id="star1" type="radio" data-index="1" name="star" value="1">
-                      <label for="star1" title="1 out of 5 stars"></label>
-                    </div>
-                  </div>
-                  <div class="input_area">
-                    <textarea name="comment" id="boughtProductComment" cols="30" rows="8" placeholder="Add Comment"></textarea>
-                    <button class="primary-btn">Submit</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Single Order -->
-      <!-- End Ordered items -->
     </div>
   </section>
   <!--================Wishlist Box Area=================-->
