@@ -1,0 +1,85 @@
+if (!empty($_REQUEST['catid'])) {
+              $catid = $_REQUEST["catid"];
+              $sql = mysqli_query($conn, "SELECT * from products where catid='$catid' group by pname ") or die(mysqli_error($conn));
+              $records = mysqli_num_rows($sql);
+              //echo $records;
+              if ($records > 0) {
+                $noOfPages = ceil($records / $limitPerPage);
+                //echo $noOfPages;
+                for ($i = 1; $i <= $noOfPages; $i++) {
+                  if ($i == $pageno) { ?>
+                    <a id="<?php echo $i; ?>" class="active"><?php echo $i; ?></a>
+                  <?php } else { ?>
+                    <a id="<?php echo $i; ?>"><?php echo $i; ?></a>
+                  <?php } ?>
+                <?php } ?>
+              <?php } ?>
+              <?php } else {
+              $sql = mysqli_query($conn, "SELECT * from products group by pname") or die(mysqli_error($conn));
+              $records = mysqli_num_rows($sql);
+              //echo $records;
+              if ($records > 0) {
+                $noOfPages = ceil($records / $limitPerPage);
+                //echo $noOfPages;
+                for ($i = 1; $i <= $noOfPages; $i++) {
+                  if ($i == $pageno) { ?>
+                    <a id="<?php echo $i; ?>" class="active"><?php echo $i; ?></a>
+                  <?php } else { ?>
+                    <a id="<?php echo $i; ?>"><?php echo $i; ?></a>
+                  <?php } ?>
+                <?php } ?>
+              <?php } ?>
+            <?php } ?>
+
+
+
+
+      Payment Info given by payuMoneyId
+      
+      [isConsentPayment] => 0 
+      [mihpayid] => 250793380 
+      [mode] => 
+      [status] => failure 
+      [unmappedstatus] => userCancelled 
+      [key] => Uj0GBM1t 
+      [txnid] => 00df24f82389dc2c1a4c 
+      [amount] => 5550.00 
+      [addedon] => 2021-02-17 17:15:06 
+      [productinfo] => ["1","8","30"] 
+      [firstname] => deepak Kumar 
+      [lastname] => 
+      [address1] => 
+      [address2] => 
+      [city] => 
+      [state] => 
+      [country] => 
+      [zipcode] => 
+      [email] => deepakjh632@gmail.com 
+      [phone] => 8862976657 
+      [udf1] => 
+      [udf2] => 
+      [udf3] => 
+      [udf4] => 
+      [udf5] => 
+      [udf6] => 
+      [udf7] => 
+      [udf8] => 
+      [udf9] => 
+      [udf10] => 
+      [hash] => ef54af721610ea06da492b154badb4d6016abbd1a7d4b81e9582bb0bf434fc529b8b46b0b45da184e90c7bf1a81d1f938a2367dd6ab772a97975f6f4982757c0 
+      [field1] => 
+      [field2] => 
+      [field3] => 
+      [field4] => 
+      [field5] => 
+      [field6] => 
+      [field7] => 
+      [field8] => 
+      [field9] => Cancelled by user 
+      [giftCardIssued] => true 
+      [PG_TYPE] => PAISA 
+      [bank_ref_num] => 250793380 
+      [bankcode] => PAYUW 
+      [error] => E000 
+      [error_Message] => No Error 
+      [payuMoneyId] => 250793380
