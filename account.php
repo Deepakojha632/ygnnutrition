@@ -91,7 +91,7 @@ if (!empty($_SESSION['uid'])) {
       <?php if(!empty($uid)){
         $orders = mysqli_query($conn,"select * from orders where uid='$uid'") or die(mysqli_error($conn));
         if(mysqli_num_rows($orders)){
-          var_dump(unserialize(mysqli_fetch_array($orders)['items']));
+          //var_dump(unserialize(mysqli_fetch_array($orders)['items']));
             while($order = mysqli_fetch_array($orders)){ ?>
               <div class="col-lg-12">
                 <div class="order-header d-flex" onclick="toggle_visibility('order-detail1');">

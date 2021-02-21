@@ -1394,6 +1394,13 @@ h6 {
   line-height: 1.4;
 }
 
+@media (max-width: 991px) {
+  .header_area .navbar .nav .nav-item .cart #lblCartCount {
+    position: relative;
+    top: 0;
+  }
+}
+
 .header_area .navbar .nav .nav-item .nav-link {
   text-transform: uppercase;
   padding: 0px;
@@ -1546,7 +1553,7 @@ h6 {
 
 @media (max-width: 991px) {
   .header_area .navbar .nav.navbar-nav.navbar-right li:first-child {
-    display: none;
+    margin-left: 0px;
   }
 }
 
@@ -1555,6 +1562,12 @@ h6 {
   line-height: 79px;
   font-weight: 600;
   font-size: 15px;
+}
+
+@media (max-width: 991px) {
+  .header_area .navbar .nav.navbar-nav.navbar-right li span {
+    line-height: 9px;
+  }
 }
 
 .header_area .navbar .nav.navbar-nav.navbar-right .search {
@@ -1639,6 +1652,15 @@ h6 {
 }
 
 #search_input_box #search_result a:hover {
+  color: #f8f8f8;
+}
+
+#msg {
+  position: relative;
+  background: #3ade00;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
   color: #f8f8f8;
 }
 
@@ -1741,7 +1763,7 @@ h6 {
 
 @media (max-width: 991px) {
   .banner-area .slide_one {
-    background: transparent;
+    background: url(../img/banner/2-mobile.jpg) center no-repeat;
   }
 }
 
@@ -1753,7 +1775,7 @@ h6 {
 
 @media (max-width: 991px) {
   .banner-area .slide_two {
-    background: transparent;
+    background: url(../img/banner/2-mobile.jpg) center no-repeat;
   }
 }
 
@@ -1765,7 +1787,7 @@ h6 {
 
 @media (max-width: 991px) {
   .banner-area .slide_three {
-    background: transparent;
+    background: url(../img/banner/2-mobile.jpg) center no-repeat;
   }
 }
 
@@ -1777,7 +1799,7 @@ h6 {
 
 @media (max-width: 991px) {
   .banner-area .slide_four {
-    background: transparent;
+    background: url(../img/banner/2-mobile.jpg) center no-repeat;
   }
 }
 
@@ -1789,7 +1811,7 @@ h6 {
 
 @media (max-width: 991px) {
   .banner-area .slide_five {
-    background: transparent;
+    background: url(../img/banner/2-mobile.jpg) center no-repeat;
   }
 }
 
@@ -1917,6 +1939,7 @@ h6 {
 @media (max-width: 767px) {
   .breadcrumb-banner h1 {
     font-size: 30px;
+    color: #f8f8f8;
   }
 }
 
@@ -1930,6 +1953,12 @@ h6 {
   color: #8c8c8c;
   font-weight: 400;
   font-size: 11px;
+}
+
+@media (max-width: 767px) {
+  .breadcrumb-banner nav a {
+    color: #fcfcfc;
+  }
 }
 
 .breadcrumb-banner nav a span {
@@ -7294,6 +7323,12 @@ label {
 .login_box_area .login_box_img {
   margin-right: -30px;
   position: relative;
+}
+
+@media (max-width: 991px) {
+  .login_box_area .login_box_img {
+    margin-right: 0px;
+  }
 }
 
 .login_box_area .login_box_img img {
