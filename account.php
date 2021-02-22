@@ -82,7 +82,7 @@ if (!empty($_SESSION['uid'])) {
     });
   </script>
 
-  <!--================Order Box Area =================-->
+  <!--================ Order Box Area =================-->
   <section id="order_sec" class="orders-section section_gap">
     <div class="container">
       <h1>Orders</h1>
