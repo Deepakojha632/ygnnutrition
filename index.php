@@ -193,7 +193,7 @@ if (isset($_SESSION['uid'])) {
             <!-- single product -->
             <div class="col-lg-3 col-md-6">
               <div class="front-single-product">
-                <a href="single-product.php?pid=<?php echo $product['pid']; ?>" class="s_product_link">
+                <a href="productpage?pid=<?php echo $product['pid']; ?>" class="s_product_link">
                   <?php if (!empty($product['image1'])) { ?>
                     <img class="img-fluid" src="img/Products/<?php echo $product['image1']; ?>" alt="<?php echo $product['image1']; ?>" />
                   <?php } else { ?>
