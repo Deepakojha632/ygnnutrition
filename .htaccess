@@ -1,0 +1,17 @@
+RewriteEngine on
+
+# Rewrite /foo/bar to /foo/bar.php
+RewriteRule ^accountpage$ account.php
+RewriteRule ^homepage$ index.php
+RewriteRule ^loginpage$ login.php
+RewriteRule ^registration$ registration.php
+RewriteRule ^resetpassword$ reset.php
+RewriteRule ^shop$ category.php
+RewriteRule ^productpage$ single-product.php
+RewriteRule ^confirmationpage$ confirmation.php
+RewriteRule ^cart$ cart.php
+RewriteRule ^contactUs$ contact.php
+RewriteRule ^logout$ logout.php
+
+
+

@@ -15,7 +15,7 @@ if (isset($_SESSION['uid'])) {
     <nav class="navbar navbar-expand-lg navbar-light main_box">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <a id="logo" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt="logo" /></a>
+        <a id="logo" class="navbar-brand logo_h" href="homepage"><img src="img/logo.png" alt="logo" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -25,10 +25,10 @@ if (isset($_SESSION['uid'])) {
         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
           <ul id="headerLink" class="nav navbar-nav menu_nav ml-auto">
             <li class="nav-item <?php if ($page == "index.php") echo "active"; ?>">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="homepage">Home</a>
             </li>
             <li class="nav-item <?php if ($page == "category.php" || $page == "single-product.php") echo "active"; ?>">
-              <a href="category.php" class="nav-link">Shop</a>
+              <a href="shop" class="nav-link">Shop</a>
               <!-- <ul class="dropdown-menu">
                 <li class="nav-item <?php //if ($page == "category.php") echo "active"; ?>">
                   <a class="nav-link" href="category.php">Shop Category</a>
@@ -58,7 +58,7 @@ if (isset($_SESSION['uid'])) {
               </ul>
             </li> -->
             <li class="nav-item <?php if ($page == "contact.php") echo "active"; ?>">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="contactUs">Contact</a>
             </li>
             <li class="nav-item submenu dropdown <?php if ($page == "account.php") echo "active"; ?>">
               <a class="nav-link"><span class="fa fa-user-circle"></span></a>
@@ -70,18 +70,18 @@ if (isset($_SESSION['uid'])) {
                     <h6 class="account_txt"><?php echo ucfirst($name); ?></h>
                   </li>
                   <li class="nav-item <?php if ($page == "account.php") echo "active"; ?>">
-                    <a class="nav-link" href="account.php">My Account</a>
+                    <a class="nav-link" href="accountpage">My Account</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Log Out</a>
+                    <a class="nav-link" href="logout">Log Out</a>
                   </li>
 
                 <?php } else { ?>
                   <li class="nav-item <?php if ($page == "login.php") echo "active"; ?>">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="loginpage">Login</a>
                   </li>
                   <li class="nav-item <?php if ($page == "registration.php") echo "active"; ?>">
-                    <a class="nav-link" href="registration.php">Register</a>
+                    <a class="nav-link" href="registration">Register</a>
                   </li>
                 <?php } ?>
               </ul>
@@ -89,7 +89,7 @@ if (isset($_SESSION['uid'])) {
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-              <a href="cart.php" id="itemCounter" class="cart"><span class="fa fa-shopping-cart"></span>
+              <a href="cart" id="itemCounter" class="cart"><span class="fa fa-shopping-cart"></span>
                 <?php
                 if (isset($counts)) { ?>
                   <span ID="lblCartCount" runat="server" CssClass="badge badge-warning" ForeColor="White"><?php echo $counts; ?></span>
